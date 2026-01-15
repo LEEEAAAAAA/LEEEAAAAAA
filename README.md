@@ -2,21 +2,18 @@
 <h3 align="center">An Australian programmer working in Switzerland</h3>
 
 ---
-
-### 🌱 About Me
-- I’m currently learning **React** and **Vite**  
-- Ask me about **Java**  
-- 📫 Reach me at: **lea.schuerch@gmail.com**  
-- ⚡ Fun fact: **Elephants cannot jump**  
+<p align="center">
+  <img src="gif.gif" alt="Fun GIF" width="100%" height="500px"/>
+</p>
 
 ---
 
-### 💻 Connect with Me
-<p align="left">
+<h2 align="center"> 💻 Connect with Me </h2>
+<p align="center">
   <a href="https://codepen.io/leeeaaaaaa" target="_blank">
     <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg" alt="CodePen" height="30" width="40" />
   </a>
-  <a href="https://www.hackerrank.com/@lea_schuerch" target="_blank">
+  <a href="https://www.hackerrank.com/@lea_schuerch" target="_blank" margin="15px">
     <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="HackerRank" height="30" width="40" />
   </a>
   <a href="https://discord.gg/leeaaaaa." target="_blank">
