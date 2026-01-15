@@ -1,4 +1,4 @@
-name: Angelcore Commit Animation
+name: Angelcore Stars Animation
 
 on:
   workflow_dispatch:
@@ -12,60 +12,38 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          node-version: '18'
+          python-version: '3.x'
 
-      - name: Install dependencies
+      - name: Create dist folder
+        run: mkdir -p dist
+
+      - name: Generate angelcore floating stars SVG
         run: |
-          npm install canvas gifencoder
+          python3 - << 'EOF'
+          import random
 
-      - name: Generate angelcore animation
-        run: |
-          node - << 'EOF'
-          const { createCanvas } = require('canvas');
-          const GIFEncoder = require('gifencoder');
-          const fs = require('fs');
+          width, height = 800, 200
+          num_stars = 20
 
-          const width = 800;
-          const height = 200;
-          const encoder = new GIFEncoder(width, height);
-          encoder.createReadStream().pipe(fs.createWriteStream('dist/angelcore.gif'));
-          encoder.start();
-          encoder.setRepeat(0);
-          encoder.setDelay(100);
-          encoder.setQuality(10);
-
-          // generate 20 frames
-          for(let frame=0; frame<20; frame++){
-            const canvas = createCanvas(width, height);
-            const ctx = canvas.getContext('2d');
-
-            // background
-            ctx.fillStyle = 'lavenderblush';
-            ctx.fillRect(0,0,width,height);
-
-            // draw drifting feathers
-            for(let i=0; i<15; i++){
-              const x = Math.random() * width;
-              const y = ((Math.random() * height) + frame*5) % height; // drift down
-              const size = 10 + Math.random()*20;
-              ctx.fillStyle = 'rgba(255,255,255,0.5)';
-              ctx.beginPath();
-              ctx.ellipse(x, y, size, size/2, 0, 0, 2*Math.PI);
-              ctx.fill();
-            }
-
-            encoder.addFrame(ctx);
-          }
-          encoder.finish();
+          with open("dist/angelcore.svg", "w") as f:
+              f.write(f'<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">\n')
+              f.write('<rect width="100%" height="100%" fill="lavenderblush"/>\n')
+              for i in range(num_stars):
+                  x = random.randint(0, width)
+                  y = random.randint(0, height)
+                  size = random.randint(20, 40)
+                  color = random.choice(["#FFB6C1", "#D8BFD8", "#FFFFFF"])  # pink, lavender, white
+                  f.write(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" opacity="0.7">✧</text>\n')
+              f.write('</svg>\n')
           EOF
 
-      - name: Push to output branch
+      - name: Push SVG to output branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output
