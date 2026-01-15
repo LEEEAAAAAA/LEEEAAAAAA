@@ -3,7 +3,7 @@ name: Angelcore Stars Animation
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"  # runs daily
+    - cron: "0 0 * * *"
 
 permissions:
   contents: write
@@ -12,18 +12,22 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      # Step 1: checkout your repo
+      - name: Checkout repo
         uses: actions/checkout@v3
 
+      # Step 2: setup Python
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
+      # Step 3: make sure dist folder exists
       - name: Create dist folder
         run: mkdir -p dist
 
-      - name: Generate angelcore floating stars SVG
+      # ✅ Step 4: generate the angelcore SVG
+      - name: Generate angelcore SVG
         run: |
           python3 - << 'EOF'
           import random
@@ -31,18 +35,19 @@ jobs:
           width, height = 800, 200
           num_stars = 20
 
-          with open("dist/angelcore.svg", "w") as f:
+          with open("dist/angelcore.svg", "w", encoding="utf-8") as f:
               f.write(f'<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">\n')
               f.write('<rect width="100%" height="100%" fill="lavenderblush"/>\n')
               for i in range(num_stars):
                   x = random.randint(0, width)
                   y = random.randint(0, height)
                   size = random.randint(20, 40)
-                  color = random.choice(["#FFB6C1", "#D8BFD8", "#FFFFFF"])  # pink, lavender, white
-                  f.write(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" opacity="0.7">✧</text>\n')
+                  color = random.choice(["#FFB6C1", "#D8BFD8", "#FFFFFF"])
+                  f.write(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" opacity="0.7">&#10022;</text>\n')
               f.write('</svg>\n')
           EOF
 
+      # Step 5: push dist folder to output branch
       - name: Push SVG to output branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
