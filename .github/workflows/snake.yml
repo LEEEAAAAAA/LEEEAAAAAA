@@ -2,7 +2,7 @@ name: GitHub Contribution Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *" # daily
+    - cron: "0 0 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -22,8 +22,8 @@ jobs:
 
       - name: Make snake white
         run: |
-          sed -i 's/fill="#.*"/fill="#FFFFFF"/g' dist/github-contribution-grid-snake.svg
-          sed -i 's/fill="#.*"/fill="#FFFFFF"/g' dist/github-contribution-grid-snake-dark.svg
+          cat dist/github-contribution-grid-snake.svg | sed 's/fill="#.*"/fill="#FFFFFF"/g' > dist/github-contribution-grid-snake-white.svg
+          cat dist/github-contribution-grid-snake-dark.svg | sed 's/fill="#.*"/fill="#FFFFFF"/g' > dist/github-contribution-grid-snake-dark-white.svg
 
       - name: Push snake to output branch
         uses: crazy-max/ghaction-github-pages@v3
