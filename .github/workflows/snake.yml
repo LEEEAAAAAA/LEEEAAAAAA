@@ -1,31 +1,56 @@
-name: GitHub Contribution Snake
-
-permissions:
-  contents: write
+name: Angelcore Animation
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *"  # daily
   workflow_dispatch:
   push:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate white snake
-        uses: Platane/snk@v3
-        env:
-          SNK_PALETTE: "#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF"
-        with:
-          github_user_name: LEEEAAAAAA
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - name: Push snake to output branch
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install svgwrite cairosvg
+
+      - name: Generate angelcore SVG animation
+        run: |
+          python3 - << 'EOF'
+          import svgwrite
+          from random import randint, uniform
+
+          width, height = 800, 200
+          dwg = svgwrite.Drawing('dist/angelcore.svg', size=(width, height))
+
+          # create soft pastel background
+          dwg.add(dwg.rect(insert=(0,0), size=(width, height), fill='lavenderblush'))
+
+          # generate drifting feathers
+          for i in range(15):
+              x = randint(0, width)
+              y = randint(0, height)
+              size = randint(10,30)
+              opacity = uniform(0.2,0.5)
+              dwg.add(dwg.ellipse(center=(x,y), r=(size, size/2), fill='white', opacity=opacity))
+
+          dwg.save()
+          EOF
+
+      - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output
