@@ -34,7 +34,7 @@
 
 <br/>
 
-<h4 align="center">⊱ Frontend ⊰</h4>
+<h4 align="center"> ˖°𐙚 Frontend 𐙚°˖</h4>
 <p align="center">
   <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="42"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" width="42"/>
@@ -46,7 +46,7 @@
 
 <br/>
 
-<h4 align="center">⊱ Backend ⊰</h4>
+<h4 align="center"> ˖°𐙚 Backend 𐙚°˖ </h4>
 <p align="center">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="42"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" width="42"/>
@@ -57,7 +57,7 @@
 
 <br/>
 
-<h4 align="center">⊱ Databases ⊰</h4>
+<h4 align="center"> ˖°𐙚 Databases 𐙚°˖</h4>
 <p align="center">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" width="42"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" width="42"/>
@@ -65,7 +65,7 @@
 
 <br/>
 
-<h4 align="center">⊱ Design & Testing ⊰</h4>
+<h4 align="center"> ˖°𐙚 Design & Testing 𐙚°˖</h4>
 <p align="center">
   <img src="https://download.blender.org/branding/community/blender_community_badge_white.svg" width="42"/>
   <img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg" width="42"/>
@@ -82,7 +82,5 @@
 
 ---
 
-
-
-
+⠀⠀⠀⠀
 
