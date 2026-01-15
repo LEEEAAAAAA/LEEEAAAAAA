@@ -3,7 +3,7 @@
 
 ---
 <p align="center">
-  <img src="flowergif.gif" alt="Fun GIF" width="100%" height="500px"/>
+  <img src="snakegif.gif" alt="Fun GIF" width="100%" height="500px"/>
 </p>
 
 ---
