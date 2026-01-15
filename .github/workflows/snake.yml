@@ -2,7 +2,7 @@ name: GitHub Contribution Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *" # runs daily at midnight
+    - cron: "0 0 * * *" # daily
   workflow_dispatch:
   push:
     branches:
@@ -12,14 +12,19 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate white snake
+      - name: Generate snake
         uses: Platane/snk@v3
         with:
           github_user_name: LEEEAAAAAA
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg
-          palette: "#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF" # all white
+
+      - name: Make snake white
+        run: |
+          sed -i 's/fill="#.*"/fill="#FFFFFF"/g' dist/github-contribution-grid-snake.svg
+          sed -i 's/fill="#.*"/fill="#FFFFFF"/g' dist/github-contribution-grid-snake-dark.svg
+
       - name: Push snake to output branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
