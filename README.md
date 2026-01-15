@@ -82,6 +82,7 @@
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LEEEAAAAAA/LEEEAAAAAA/output/angelcore.gif" alt="Angelcore Animation" width="90%" />
+  <img src="https://raw.githubusercontent.com/LEEEAAAAAA/LEEEAAAAAA/output/angelcore.svg" alt="Angelcore Stars" width="90%" />
 </p>
+
 
