@@ -12,18 +12,15 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate snake
+      - name: Generate white snake
         uses: Platane/snk@v3
+        env:
+          SNK_PALETTE: "#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF"
         with:
           github_user_name: LEEEAAAAAA
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg
-
-      - name: Make snake white
-        run: |
-          cat dist/github-contribution-grid-snake.svg | sed 's/fill="#.*"/fill="#FFFFFF"/g' > dist/github-contribution-grid-snake-white.svg
-          cat dist/github-contribution-grid-snake-dark.svg | sed 's/fill="#.*"/fill="#FFFFFF"/g' > dist/github-contribution-grid-snake-dark-white.svg
 
       - name: Push snake to output branch
         uses: crazy-max/ghaction-github-pages@v3
