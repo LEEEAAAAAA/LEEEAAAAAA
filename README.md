@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Lea</h1>
+<h1 align="center">「 ✦ Lea ✦ 」</h1>
 <h3 align="center">An Australian programmer working in Switzerland</h3>
 
 ---
