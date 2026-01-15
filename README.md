@@ -80,3 +80,6 @@
 </details>
 
 ---
+<p align="center">
+  <img src="https://raw.githubusercontent.com/LEEEAAAAAA/LEEEAAAAAA/output/github-contribution-grid-snake.svg" alt="GitHub Snake" width="90%"/>
+</p>
