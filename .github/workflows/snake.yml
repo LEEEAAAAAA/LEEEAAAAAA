@@ -1,12 +1,9 @@
-name: Angelcore Animation
+name: Angelcore Commit Animation
 
 on:
-  schedule:
-    - cron: "0 0 * * *"  # daily
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: "0 0 * * *"  # runs daily
 
 permissions:
   contents: write
@@ -18,36 +15,54 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: '3.x'
+          node-version: '18'
 
       - name: Install dependencies
         run: |
-          pip install svgwrite cairosvg
+          npm install canvas gifencoder
 
-      - name: Generate angelcore SVG animation
+      - name: Generate angelcore animation
         run: |
-          python3 - << 'EOF'
-          import svgwrite
-          from random import randint, uniform
+          node - << 'EOF'
+          const { createCanvas } = require('canvas');
+          const GIFEncoder = require('gifencoder');
+          const fs = require('fs');
 
-          width, height = 800, 200
-          dwg = svgwrite.Drawing('dist/angelcore.svg', size=(width, height))
+          const width = 800;
+          const height = 200;
+          const encoder = new GIFEncoder(width, height);
+          encoder.createReadStream().pipe(fs.createWriteStream('dist/angelcore.gif'));
+          encoder.start();
+          encoder.setRepeat(0);
+          encoder.setDelay(100);
+          encoder.setQuality(10);
 
-          # create soft pastel background
-          dwg.add(dwg.rect(insert=(0,0), size=(width, height), fill='lavenderblush'))
+          // generate 20 frames
+          for(let frame=0; frame<20; frame++){
+            const canvas = createCanvas(width, height);
+            const ctx = canvas.getContext('2d');
 
-          # generate drifting feathers
-          for i in range(15):
-              x = randint(0, width)
-              y = randint(0, height)
-              size = randint(10,30)
-              opacity = uniform(0.2,0.5)
-              dwg.add(dwg.ellipse(center=(x,y), r=(size, size/2), fill='white', opacity=opacity))
+            // background
+            ctx.fillStyle = 'lavenderblush';
+            ctx.fillRect(0,0,width,height);
 
-          dwg.save()
+            // draw drifting feathers
+            for(let i=0; i<15; i++){
+              const x = Math.random() * width;
+              const y = ((Math.random() * height) + frame*5) % height; // drift down
+              const size = 10 + Math.random()*20;
+              ctx.fillStyle = 'rgba(255,255,255,0.5)';
+              ctx.beginPath();
+              ctx.ellipse(x, y, size, size/2, 0, 0, 2*Math.PI);
+              ctx.fill();
+            }
+
+            encoder.addFrame(ctx);
+          }
+          encoder.finish();
           EOF
 
       - name: Push to output branch
