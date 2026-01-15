@@ -66,7 +66,6 @@
   <img src="https://www.vectorlogo.zone/logos/jasmine/jasmine-icon.svg" alt="Jasmine" width="40" height="40"/>
   <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="Jest" width="40" height="40"/>
   <img src="https://www.vectorlogo.zone/logos/mochajs/mochajs-icon.svg" alt="Mocha" width="40" height="40"/>
-  <img src="https://grafana.com/static/img/logo-compressed.svg" alt="Grafana" width="40" height="40"/>
 </p>
 
 ---
