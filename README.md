@@ -1,5 +1,5 @@
 <h1 align="center">「 ✦ Lea ✦ 」</h1>
-<h3 align="center">An Australian programmer working in Switzerland</h3>
+<p align="center"> ⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹ </p>
 
 ---
 <p align="center">
@@ -9,7 +9,7 @@
 ---
 
 <p align="center">  
-<span style="font-size:16pt">⊹ Connect with Me ⊹</span>  
+<span style="font-size:16pt"><b>⊹ Connect with Me ⊹</b></span>  
 <br><br>
 <a href="https://codepen.io/leeeaaaaaa" target="_blank">
   <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg" height="36" width="48" style="margin:0 12px;"/>
@@ -24,6 +24,7 @@
 
 
 <br>
+<p align="center">⏔⏔⏔⏔⏔⏔⏔⏔⏔⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔⏔⏔⏔⏔⏔⏔⏔⏔⏔</p>
 <br>
 
 <p align="center"><b> Languages & Tools  </b></p>
