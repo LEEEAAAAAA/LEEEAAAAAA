@@ -49,7 +49,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="42"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" width="42"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" width="42"/>
+  <img src="https://www.google.com/search?sca_esv=7d06b508f29bacac&rlz=1C5CHFA_enCH1069CH1069&sxsrf=AKL5yDjCCrb8fpNYyBRsDYMAroUJOE9HkA:1793626180790&udm=2&fbs=ACAhTvwdifjn2dKXmjtOfBxVFl_koHVe5RLSnJlTH2QYaq_YVdbYfq_upmJPcFgYr-v9gSTVyD5sdmH9TPzYOdGBFKOTmwRHfjznPgw66KUD0uZp77Ujns70N0XDbOrVoNljNfjGJxwmfeBh55N6JVz2Txblmft6QER9eK1C1spV6p3Bt2a8QHHEJqwawKEUCEIqHGYfwjAj9-eBreqUelWKSRBc6XuAEA&q=python+logo&sa=X&ved=2ahUKEwjCkPaasumXAxWF0gIHHawpFaAQtKgLegQIHRAB&biw=1728&bih=962&dpr=2#sv=CAMSUxoyKhBlLWtDZWQtMENQUUNJTWNNMg5rQ2VkLTBDUFFDSU1jTToOWDZiMmRrYmh5U2tuR00gBCoXCgFzEhBlLWtDZWQtMENQUUNJTWNNGAEwAVACGAcguuKRlglKCBACGAEgAigB" width="42"/>
 </p>
 
 <br/>
@@ -58,6 +58,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" width="42"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" width="42"/>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" width="42"/>
 </p>
 
 <br/>
